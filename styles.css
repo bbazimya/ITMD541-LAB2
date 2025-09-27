@@ -1,6 +1,14 @@
 /* Flexbox Part 1 */
 
 #flex-section1 ul {
+display: flex;                 /* I turned the list into a flex row */
+  justify-content: space-evenly; /* to justify space between items  */
+  align-items: center;           /* center the links in boxes */
+  list-style: none;              /* I removed the bullets */
+  padding: 0;                    /* I removed default UL padding */
+  margin: 0;                     /* I removed default UL margin */
+  flex-wrap: nowrap;             /* keep all four buttons showing up */
+
 
 }
 
@@ -11,21 +19,45 @@
 
 #flex-section2 ul {
 
+display: flex;
+  gap: 0px; /* removing the gap */
+  list-style: none; /* removing styles */
+  padding: 0; /* no padding spaces */
+  margin: 0;  /* no margins */
 }
 
 #flex-section2 li {
 
+flex: 1 1 0;                     /* three equal-width columns */
+  min-height: 150px;
+  display: flex;                   /* center content inside each li */
+   background-color: #ccc;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  border: 4px solid #555;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+  transition: box-shadow .18s ease, transform .12s ease;
+
+}
+
+#flex-section2 li:hover { /* I added hover for higher standard*/
+  box-shadow: 0 6px 16px rgba(0,0,0,.10);
+  transform: translateY(-4px);
 }
 
 #flex-section2 .item1 {
 
+	 order: 1;     /* first column */
 }
 
 #flex-section2 .item2 {
+	 order: 3;    /* third column */
 
 }
 
-#flex-section2 .item3 {
+#flex-section2 .item3 {  /* second  column */
+	 order: 2;   
 
 }
 
