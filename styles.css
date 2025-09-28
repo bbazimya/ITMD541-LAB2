@@ -1,15 +1,13 @@
 /* Flexbox Part 1 */
 
 #flex-section1 ul {
-display: flex;                 /* I turned the list into a flex row */
+  display: flex;                 /* I turned the list into a flex row */
   justify-content: space-evenly; /* to justify space between items  */
   align-items: center;           /* center the links in boxes */
   list-style: none;              /* I removed the bullets */
   padding: 0;                    /* I removed default UL padding */
   margin: 0;                     /* I removed default UL margin */
   flex-wrap: nowrap;             /* keep all four buttons showing up */
-
-
 }
 
 /* end Flexbox Part 1 */
@@ -18,47 +16,40 @@ display: flex;                 /* I turned the list into a flex row */
 /* Flexbox Part 2 */
 
 #flex-section2 ul {
-
-display: flex;
-  gap: 0px; /* removing the gap */
-  list-style: none; /* removing styles */
-  padding: 0; /* no padding spaces */
-  margin: 0;  /* no margins */
+  display: flex;
+  gap: 0px;                /* removing the gap */
+  list-style: none;        /* removing styles */
+  padding: 0;             /* no padding spaces */
+  margin: 0;              /* no margins */
+  font-family: 'Open Sans', sans-serif;  /* I tried this font to match the given on the sample */
+  font-size: 1rem; /* I tried this this size to match the given on the sample */
 }
 
 #flex-section2 li {
-
-flex: 1 1 0;                     /* three equal-width columns */
+  flex: 1 1 0;           /*This is to create three equal-width columns */
   min-height: 150px;
-  display: flex;                   /* center content inside each li */
-   background-color: #ccc;
-  text-align: center;
-  padding: 10px;
-  border-radius: 8px;
-  border: 4px solid #555;
-  box-shadow: 0 1px 2px rgba(0,0,0,.06);
-  transition: box-shadow .18s ease, transform .12s ease;
+  display: flex;        /* displaying as flexbox the content inside each li */
+ 
+  background-color: #ccc; /* setting background coulor to light gray for each li */
+
+  text-align: center; /* setting the alignment to center for each li */
+  padding: 10px; /* setting the space between the tex and border for each li */
+  border-radius: 8px;  /*rounds the  corners by 8 pixels for each li*/  
+  border: 4px solid #555;  /* setting the thickness of the border to 4px and dark gray for each bordeer of each li */
 
 }
 
-#flex-section2 li:hover { /* I added hover for higher standard*/
-  box-shadow: 0 6px 16px rgba(0,0,0,.10);
-  transform: translateY(-4px);
-}
-
+/*I tried to ordering items to match the way is given in the sample*/
 #flex-section2 .item1 {
-
-	 order: 1;     /* first column */
+  order: 1;                 
 }
 
 #flex-section2 .item2 {
-	 order: 3;    /* third column */
-
+  order: 3;                      
 }
 
-#flex-section2 .item3 {  /* second  column */
-	 order: 2;   
-
+#flex-section2 .item3 {
+  order: 2;                    
 }
 
 /* end Flexbox Part 2 */
@@ -67,11 +58,22 @@ flex: 1 1 0;                     /* three equal-width columns */
 /* Flexbox Part 3 */
 
 #flex-section3 .box {
+  display: flex;         /* setting to enable flex layout */
+  align-items: center;       /* vertical centering of the card */
+  justify-content: center;    /* horizontal centering of the card */
+
 
 }
 
 #flex-section3 .tags ul {
-
+  display: flex;              /* setting each tag to appear as flexbox*/
+  flex-wrap: wrap;            /* enabeling wrap to a new line  */
+  justify-content: flex-start; /* tags aligning  left  */
+  gap: 5px;                  /* space between tag contents */
+  list-style: none;           /* I removed bullets */
+  margin: 0;                  /* reseting margins to 0 to desable appearing*/
+  padding: 5px 0 0 0; /* setting gaps from card edges */
+ 
 }
 
 /* end Flexbox Part 3 */
@@ -80,20 +82,30 @@ flex: 1 1 0;                     /* three equal-width columns */
 /* Grid Part 1 */
 
 #grid-section1 .grid {
-
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /*I created  4 equal columns  each is 1fr*/
+  grid-auto-rows: 100px;                  /* Setting the hieght to 100px-tall rows */
+  gap: 20px;                              /* Setting 20px for intersection distance/gap between rows/cols*/
 }
 
 /* end Grid Part 1 */
 
 
 /* Grid Part 2 */
-
 #grid-section2 .gridboxblue {
+  /* Setting right two columns to all three rows */
 
+  grid-column: 2 / 4;   /* Setting columns 2–3 */
+  grid-row: 1 / 4;      /* rows 1–3 */
+  z-index: 2;      /* setting blue over red */
 }
 
 #grid-section2 .gridboxred {
 
+  /* Here I am setting left two columns in the middle row only */
+  grid-column: 1 / 3;   /* columns 1–2 */
+  grid-row: 2 / 3;      /* row 2 */
+  z-index: 1;
 }
 
 /* end Grid Part 2 */
@@ -102,45 +114,59 @@ flex: 1 1 0;                     /* three equal-width columns */
 /* Grid Part 3 */
 
 #grid-section3 .grid {
-
+  display: grid;  /*setting the section to be a grid */
+  grid-template-columns: 2fr 1fr;         /* first column twice the width */
+  grid-template-rows: 100px 300px 100px;  /* 1st & 3rd rows 100px, middle 300px */
+  gap: 10px;                              /* 10px gap in both directions */
 }
 
 #grid-section3 .box1 {
-
+  grid-column: 1 / 3;   /* setting th box one to span in both columns (top row) */
+  grid-row: 1 / 2;
 }
 
+/* Setting the box two to be on the right/middle row */
 #grid-section3 .box2 {
-
+  grid-column: 2 / 3;   /* right column */
+  grid-row: 2 / 3;      /* middle row */
 }
 
+/* Box Three should be on the left, middle row */
 #grid-section3 .box3 {
-
+  grid-column: 1 / 2;   /* left column */
+  grid-row: 2 / 3;      /* middle row */
 }
 
 #grid-section3 .box4 {
-
+  grid-column: 1 / 3;   /* Setting the box Four to span to both columns in the bottom row */
+  grid-row: 3 / 4;
 }
 
 /* end Grid Part 3 */
 
 
+
 /* Transition Part */
 
 #transition-section .box a {
-	display: inline-block;
-	background-color: #ccc;
-	color: #000;
-	padding: 20px;
-	text-decoration: none;
-
-
+  display: inline-block; /* Setting the width/height/padding to work like a box */
+  background-color: #ccc;  /* light gray background */
+  color: #000; /* black text */
+  padding: 20px;  /*stetting space between the link text and it's border*/
+  text-decoration: none; /* to remove underline */
+  border-radius: 10px; /* rounding the corners by 10px*/
+  box-shadow: 0 1px 2px rgba(0,0,0,.06); /* setting small shadow */
+  transition-property: background-color, color, transform, box-shadow; /* setting the way in which things will animate */
+  transition-duration: 3s;            /* will be slow on hover-out */
 }
 
 #transition-section .box a:hover {
-	background-color: #cc0000;
-	color: #fff;
-
-
+  background-color: #cc0000;      /* setting the bgcolor when on hover */
+  color: #fff;                    /* setting the white for textwhen on hover */
+  transition-duration: .5s;       /* will be fast when hover  */
+  transform: translateY(-1px);    /* setting the tiny lift on hover */
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);  /* setting the bigger shadow on hover */
 }
+
 
 /* end Transition Part */
